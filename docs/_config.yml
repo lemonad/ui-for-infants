@@ -1,3 +1,4 @@
 title: Gaze-driven UI for infants
 description: A project blog for the KTH course Computer Graphics and Interaction (DGI17)
 theme: jekyll-theme-minimal
+baseurl: /ui-for-infants
