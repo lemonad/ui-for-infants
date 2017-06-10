@@ -1,6 +1,6 @@
 ---
 layout:  post
-title:   Background II: Gaze-driven interaction
+title:   Background II. Gaze-driven interaction
 date:    2017-06-10 14:34:03
 summary: Smooth pursuits
 ---

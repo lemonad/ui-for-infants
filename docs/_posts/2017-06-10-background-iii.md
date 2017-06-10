@@ -1,6 +1,6 @@
 ---
 layout:  post
-title:   Background III: Pursuit for infants?
+title:   Background III. Pursuit for infants?
 date:    2017-06-10 22:09:20
 summary: Smooth pursuits
 ---
