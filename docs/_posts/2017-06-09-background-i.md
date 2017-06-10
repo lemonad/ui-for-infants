@@ -1,6 +1,7 @@
 ---
-layout: post
-title: Background I: Apps for infants and toddler
+layout:  post
+title:   Background I. Apps for infants and toddler
+date:    2017-06-09 11:21:29
 summary: What if we could design a user interface specifically for infants?
 ---
 
