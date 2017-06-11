@@ -18,7 +18,7 @@ As the eyes are a relatively small feature of the face, device-mounted
 eye-trackers need very good accuracy if they should be consistently capable to
 register minute changes in gaze. At a distance of half a meter from a display,
 shifting our eyes as little as one degree represents about one centimeter of
-gaze shift on the display. The Tobii Pro X3–120, a very capable screen-mounted
+gaze shift on the display. The Tobii Pro X3-120, a capable screen-mounted
 eye tracker, can generally pick up eye movements as small as half a degree
 under good conditions.
 
@@ -30,7 +30,7 @@ users, it could even be difficult to know when and how to calibrate.
 
 
 ### Enter Pursuits
-Pursuits (Vidal 2014, Vidal 2013a, Vidal 2013b) enables calibration-free
+_Pursuits_ (Vidal 2014, Vidal 2013a, Vidal 2013b) enables calibration-free
 interaction with graphical devices using only gaze. It does this by introducing
 a new type of graphical user interface element, based on movement (see figure
 below). A user selects an element by following its specific
@@ -41,7 +41,7 @@ movements.
   <figcaption>Source: Vidal (2014)</figcaption>
 </figure>
 
-Pursuits utilizes the smooth pursuits movements of the eye, which is a
+_Pursuits_ utilizes the smooth pursuits movements of the eye, which is a
 type of movement that only happens when we are following something with our
 eyes. Most people can not reproduce this movement on their own, which means
 that triggering false positives while "just looking" can largely be avoided.

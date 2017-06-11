@@ -26,12 +26,12 @@ like tap and swipe:
 Now, this is no surprise. It takes time for children to develop precise
 enough motor skills for how tablet touch-UIs are designed to be used. Some
 apps for infants do try to work around it by encouraging full hand
-interaction or the microphone but this comes with the cost of limiting the
+interaction or the microphone but this comes at the cost of limiting the
 fidelity and intentionality of the interaction. That is, if the expected
 input is coarse and imprecise, you can't make too much out of it or risk
 output appearing random to the user.
 
-But what if we could design a user interface specifically for infants to use,
+What if we could design a user interface specifically for infants to use,
 one that leveraged some other faculty or sense that develops earlier than
 touch -- would infants be able to use it then, and perhaps more importantly,
 would they want to?
