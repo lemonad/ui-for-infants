@@ -1,8 +1,7 @@
 ---
-layout:  post
-title:   Background I. Apps for infants and toddler
+title:   "Background I. Apps for infants and toddler"
 date:    2017-06-09 11:21:29
-summary: What if we could design a user interface specifically for infants?
+excerpt: What if we could design a user interface specifically for infants?
 ---
 
 > The existing literature suggests that young children may benefit from using
@@ -19,7 +18,10 @@ that before 12 months of age, most (but not all) infants were using both
 hands or multiple fingers rather than single fingers and specific gestures
 like tap and swipe:
 
-> ![Hourcade 2015]({{ site.url }}{{ site.baseurl }}/assets/images/hourcade-2015-hands-or-fingers.jpg)
+<figure>
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/images/hourcade-2015-hands-or-fingers.jpg" alt="">
+  <figcaption>Source: Hourcade et al. (2015)</figcaption>
+</figure>
 
 Now, this is no surprise. It takes time for children to develop precise
 enough motor skills for how tablet touch-UIs are designed to be used. Some

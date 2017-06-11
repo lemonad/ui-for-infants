@@ -33,10 +33,13 @@ users, it could even be difficult to know when and how to calibrate.
 Pursuits (Vidal 2014, Vidal 2013a, Vidal 2013b) enables calibration-free
 interaction with graphical devices using only gaze. It does this by introducing
 a new type of graphical user interface element, based on movement (see figure
-from Vidal 2014, below). A user selects an element by following its specific
+below). A user selects an element by following its specific
 movements.
 
-> ![Vidal 2014]({{ site.url }}{{ site.baseurl }}/assets/images/pursuits-illustration.png)
+<figure>
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/images/pursuits-illustration.png" alt="">
+  <figcaption>Source: Vidal (2014)</figcaption>
+</figure>
 
 Pursuits utilizes the smooth pursuits movements of the eye, which is a
 type of movement that only happens when we are following something with our
