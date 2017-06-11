@@ -1,9 +1,9 @@
 ---
-title:   "Background I. Apps for infants and toddler"
+title:   "Background I: Apps for infants and toddler"
 date:    2017-06-09 11:21:29
-excerpt: What if we could design a user interface specifically for infants?
----
+excerpt: "What if we could design a user interface specifically for infants?"
 
+---
 > The existing literature suggests that young children may benefit from using
 > computers under the right circumstances. At the same time, it is clear that
 > we know very little about the use of computers by children under the age of

@@ -1,10 +1,8 @@
 ---
-layout:  post
-title:   Background III. Pursuit for infants?
-date:    2017-06-10 22:09:20
-summary: Smooth pursuits
----
+title:   "Background III: Pursuit for infants?"
+excerpt: "Smooth pursuits in infants reaches adult performance in just five months."
 
+---
 Neonates (children less than four weeks old) can sometimes track objects
 if they are large and move slowly. At this age they seem to rely on saccades
 (rapid jumps between different fixation points in the same direction, usually

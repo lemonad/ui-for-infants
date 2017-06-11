@@ -1,10 +1,9 @@
 ---
-layout:  post
-title:   Background II. Gaze-driven interaction
+title:   "Background II: Gaze-driven interaction"
 date:    2017-06-10 14:34:03
-summary: Smooth pursuits
----
+excerpt: "Gaze-driven interaction without calibration using Pursuits."
 
+---
 Gaze tracking tries to establish where one is looking, like fixated on a
 point in space or tracking a moving object, by taking into account relative
 pupil position, head position, etc. Usually this is done with specialized
