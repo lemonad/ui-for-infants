@@ -1,220 +1,160 @@
-# Pixyll
+# [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/)
 
-[pixyll.com](http://www.pixyll.com)
+[![GitHub release](https://img.shields.io/gem/v/minimal-mistakes-jekyll.svg)](https://github.com/mmistakes/minimal-mistakes/releases) [![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/mmistakes/minimal-mistakes/master/LICENSE)
 
-![Pixyll screenshot](https://cloud.githubusercontent.com/assets/1424573/3847467/134aa236-1e66-11e4-8421-4e8c122118dc.png)
+Minimal Mistakes is a flexible two-column Jekyll theme. Perfect for hosting your personal site, blog, or portfolio on GitHub or self-hosting on your own server. As the name implies --- styling is purposely minimalistic to be enhanced and customized by you :smile:.
 
-Pixyll is a simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff. It's mobile _first_, fluidly responsive, and delightfully lightweight.
+See what's new in the [CHANGELOG](CHANGELOG.md).
 
-It's pretty minimal, but leverages large type and drastic contrast to make a statement, on all devices.
+:sparkles: Minimal Mistakes is now available as a [Ruby gem](https://rubygems.org/gems/minimal-mistakes-jekyll). Consult the [Quick-Start Guide](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/) and [this blog post](https://mmistakes.github.io/minimal-mistakes/jekyll/gemified-theme-beta/) to learn how to upgrade.
 
-This Jekyll theme was crafted with <3 by [John Otander](http://johnotander.com)
-([@4lpine](https://twitter.com/4lpine)).
+[![Minimal Mistakes live preview][2]][1]
 
-中文版 <https://github.com/ee0703/pixyll-zh-cn>.
+[1]: https://mmistakes.github.io/minimal-mistakes/
+[2]: screenshot.png (live preview)
 
-## Getting Started
+![layout examples](screenshot-layouts.png)
 
-If you're completely new to Jekyll, I recommend checking out the documentation at <http://jekyllrb.com> or there's a tutorial by [Smashing Magazine](http://www.smashingmagazine.com/2014/08/01/build-blog-jekyll-github-pages/).
+## Notable Features
 
-```
-$ git clone git@github.com:johnotander/pixyll.git
-$ cd pixyll
-$ gem install bundler # If you don't have bundler installed
-$ bundle install
-```
+- "Gemified" for easier install/upgrading
+- Compatible with Jekyll 3.x and GitHub Pages
+- Support for Jekyll's built-in Sass/SCSS preprocessor
+- Several responsive layout options (single, archive index, splash, and paginated home page)
+- SEO optimized with support for [Twitter Cards](https://dev.twitter.com/cards/overview) and [Open Graph](http://ogp.me/) data
+- Optional [header images](https://mmistakes.github.io/minimal-mistakes/docs/layouts/#headers), [custom sidebars](https://mmistakes.github.io/minimal-mistakes/docs/layouts/#sidebars), [table of contents](https://mmistakes.github.io/minimal-mistakes/docs/helpers/#table-of-contents), [galleries](https://mmistakes.github.io/minimal-mistakes/docs/helpers/#gallery), related posts, [breadcrumb links](https://mmistakes.github.io/minimal-mistakes/docs/configuration/#breadcrumb-navigation-beta), [navigation lists](https://mmistakes.github.io/minimal-mistakes/docs/helpers/#navigation-list), and more.
+- Commenting support (powered by [Disqus](https://disqus.com/), [Facebook](https://developers.facebook.com/docs/plugins/comments), Google+, [Discourse](https://www.discourse.org/), static-based via [Staticman](https://staticman.net/), and custom).
+- [Google Analytics](https://www.google.com/analytics/) support.
+- UI localized text in English (default), Brazilian Portuguese, Chinese, French, German, Italian, Korean, Nepali (Nepalese), Russian, Spanish, and Turkish
 
-#### Verify your Jekyll version
+## Demo Pages
 
-It's important to also check your version of Jekyll since this project uses Native Sass which
-is [only supported by 2.0+](http://jekyllrb.com/news/2014/05/06/jekyll-turns-2-0-0/).
+| Name                                        | Description                                           |
+| ------------------------------------------- | ----------------------------------------------------- |
+| [Post with Header Image][header-image-post] | A post with a large header image. |
+| [HTML Tags and Formatting Post][html-tags-post] | A variety of common markup showing how the theme styles them. |
+| [Syntax Highlighting Post][syntax-post] | Post displaying highlighted code. |
+| [Post with a Gallery][gallery-post] | A post showing several images wrapped in `<figure>` elements. |
+| [Sample Collection Page][sample-collection] | Single page from a collection. |
+| [Categories Archive][categories-archive] | Posts grouped by category. |
+| [Tags Archive][tags-archive] | Posts grouped by tags. |
 
-### Fork, then clone
+Additional sample posts are available under [posts archive][year-archive] on the demo site. Source files for these (and the entire demo site) can be found in [`/docs`](docs).
 
-Fork the repo, and then clone it so you've got the code locally.
+[header-image-post]: https://mmistakes.github.io/minimal-mistakes/layout-header-image-text-readability/
+[gallery-post]: https://mmistakes.github.io/minimal-mistakes/post%20formats/post-gallery/
+[html-tags-post]: https://mmistakes.github.io/minimal-mistakes/markup/markup-html-tags-and-formatting/
+[syntax-post]: https://mmistakes.github.io/minimal-mistakes/markup-syntax-highlighting/
+[sample-collection]: https://mmistakes.github.io/minimal-mistakes/recipes/chocolate-chip-cookies/
+[categories-archive]: https://mmistakes.github.io/minimal-mistakes/categories/
+[tags-archive]: https://mmistakes.github.io/minimal-mistakes/tags/
+[year-archive]: https://mmistakes.github.io/minimal-mistakes/year-archive/
 
-### Modify the `_config.yml`
+## Usage
 
-The `_config.yml` located in the root of the Pixyll directory contains all of the configuration details
-for the Jekyll site. The defaults are:
+For detailed instructions on how to configure, customize, add content, and more read the [theme's documentation](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/).
 
-```yml
-# Site settings
-title: Pixyll
-email: your_email@example.com
-author: John Otander
-description: "A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff."
-baseurl: ""
-url: "http://pixyll.com"
+**Note:** Gem version of the theme requires Jekyll v3.3+ and is not currently supported on [GitHub Pages](https://pages.github.com/). You can still use the theme with GitHub Pages, you'll just need to install using the old "[repo fork method](https://mmistakes.github.io/minimal-mistakes/docs/installation/)".
 
-# Build settings
-markdown: kramdown
-permalink: pretty
-paginate: 3
-```
+## Quick Start
 
-### Jekyll Serve
+Add this line to your Jekyll site's `Gemfile`:
 
-Then, start the Jekyll Server. I always like to give the `--watch` option so it updates the generated HTML when I make changes.
-
-```
-$ jekyll serve --watch
-```
-
-Now you can navigate to `localhost:4000` in your browser to see the site.
-
-### Using Github Pages
-
-You can host your Jekyll site for free with Github Pages. [Click here](https://pages.github.com/) for more information.
-
-#### A configuration tweak if you're using a gh-pages sub-folder
-
-In addition to your github-username.github.io repo that maps to the root url, you can serve up sites by using a gh-pages branch for other repos so they're available at github-username.github.io/repo-name.
-
-This will require you to modify the `_config.yml` like so:
-
-```yml
-# Site settings
-title: Repo Name
-email: your_email@example.com
-author: John Otander
-description: "Repo description"
-baseurl: "/repo-name"
-url: "http://github-username.github.io"
-
-# Build settings
-markdown: kramdown
-permalink: pretty
-paginate: 3
+```ruby
+gem "minimal-mistakes-jekyll"
 ```
 
-This will ensure that the the correct relative path is constructed for your assets and posts. Also, in order to run the project locally, you will need to specify the blank string for the baseurl: `$ jekyll serve --baseurl ''`.
-
-##### If you don't want the header to link back to the root url
-
-You will also need to tweak the header include `/{{ site.baseurl }}`:
-
-```html
-<header class="site-header px2 px-responsive">
-  <div class="mt2 wrap">
-    <div class="measure">
-      <a href="{{ site.url }}/{{ site.baseurl }}">{{ site.title }}</a>
-      <nav class="site-nav right">
-        {% include navigation.html %}
-      </nav>
-    </div>
-  </div>
-</header>
-```
-
-A relevant Jekyll Github Issue: <https://github.com/jekyll/jekyll/issues/332>
-
-### Contact Form
-
-The contact form uses <http://formspree.io>. It will require you to fill the form out and submit it once, before going live, to confirm your email.
-
-More setup instructions and advanced options can be found at [http://formspree.io](http://formspree.io/)
-
-
-### Disqus
-
-To configure Disqus, set up a [Disqus site](https://disqus.com/admin/create/) with the same name as your site. Then, in `_config.yml`, edit the `disqus_shortname` value to enable Disqus.
-
-### txtpen
-
-To configure txtpen, set up a [txtpen site](https://txtpen.com/go) with the same name as your site. Then, in `_config.yml`, edit the `txtpen_sitename` value to enable txtpen
-
-### Customizing the CSS
-
-All variables can be found in the `_sass/_variables.scss` file, toggle these as you'd like to change the look and feel of Pixyll.
-
-### Page Animation
-
-If you would like to add a [fade-in-down effect](http://daneden.github.io/animate.css/), you can add `animated: true` to your `_config.yml`.
-
-### AnchorJS
-
-[AnchorJS](https://github.com/bryanbraun/anchorjs): _A JavaScript utility for adding deep anchor links to existing page content. AnchorJS is lightweight, accessible, and has no dependencies._ You can turn it on by toggling `enable_anchorjs`. Because it offers many ways for customization, tweaks should be done in `_includes/footer.html`. Default settings after turning AnchorJS on are:
-
-```html
-<script>
-    anchors.options.visible = 'always';
-    anchors.add('article h2, article h3, article h4, article h5, article h6');
-</script>
-```
-
-See [documentation](http://bryanbraun.github.io/anchorjs/#basic-usage) for more options.
-
-### Put in a Pixyll Plug
-
-If you want to give credit to the Pixyll theme with a link to <http://pixyll.com> or my personal website <http://johnotander.com> somewhere, that'd be awesome. No worries if you don't.
-
-### Web analytics and search engines
-
-You can measure visits to your website either by using [Google Analytics](https://www.google.com/analytics/) tracking embed or the more advanced [Google Tag Manager](https://www.google.com/analytics/tag-manager/) container.
-* For Google Analytics set up the value for `google_analytics`, it should be something like `google_analytics: UA-XXXXXXXX-X`.
-* For Google Tag Manager set up the value for `google_tag_manager`, it should be something like: `google_tag_manager: GTM-XXXXX`.
-* _Do not_ set both of above methods because this will cause conflicts and skew your reporting data.
-* Remember that you need to properly configure the GTM container in its admin panel if you want it to work. More info is available in [GTM's docs](https://www.google.com/analytics/tag-manager/resources/).
-
-Your website is, by default, set to be allowed for crawling and indexing by search engines. (Unless you made yourself a custom robots.txt file). You can use front matter settings on each page to control how search engines will it. Sometimes you may want to exclude a particular page from indexing or forbid Google to store a copy of your page in its cache. It is up to you. Use the `meta_robots` frontmatter key and assign values based on [this table](https://developers.google.com/webmasters/control-crawl-index/docs/robots_meta_tag?hl=en#valid-indexing--serving-directives). Some examples:
+Add this line to your Jekyll site's `_config.yml` file:
 
 ```yaml
-# exclude page from index
-meta_robots: noindex
-
-# allow indexing, disallow caching
-meta_robots: noarchive
-
-# allow indexing, disallow crawling links
-meta_robots: nofollow
-
-# disallow indexing, follow links
-meta_robots: noindex,follow
+theme: minimal-mistakes-jekyll
 ```
 
-In order to get more information about your website's status in search engines, you can register it in [Google Search Console](https://www.google.com/webmasters/tools/home) and/or [Bing Webmaster Tools](http://www.bing.com/toolbox/webmaster). Both these tools will ask you to authorize your website with them and there are couple of ways to do that. Pixyll supports verification via meta tags - just fill in values for `google_verification` and/or `bing_verification` in `_config.yml`, the verification strings and meta tags will then be added automatically.
+Then run Bundler to install the theme gem and dependencies:
 
-If search engine optimization is your thing, you can also set up `meta_description` values for each page/post. By default Pixyll uses `summary` to populate the `<meta name="description" content="...">` tag and falls back to `description` from `_config.yml` if `summary` is not present in page/post's front matter. The `summary` is also used for generating Open Graph tags. Why would you want to use a dedicated variable for meta description? Because character limit to properly display this description in search results (as a snippet) is way smaller than in Open Graph. It is recommended to keep it at 155-160 characters, for more in-depth info read [this article](https://moz.com/blog/i-cant-drive-155-meta-descriptions-in-2015).
-
-And lastly - if you happen to write in language other than English be sure to change `og_locale` in `_config.yml` to reflect it.
-
-### Enjoy
-
-I hope you enjoy using Pixyll. If you encounter any issues, please feel free to let me know by creating an [issue](https://github.com/johnotander/pixyll/issues). I'd love to help.
-
-## Upgrading Pixyll
-
-Pixyll is always being improved by its users, so sometimes one may need to upgrade.
-
-#### Ensure there's an upstream remote
-
-If `git remote -v` doesn't have an upstream listed, you can do the following to add it:
-
-```
-git remote add upstream https://github.com/johnotander/pixyll.git
+```bash
+bundle install
 ```
 
-#### Pull in the latest changes
+To update the theme run `bundle update`.
 
-```
-git pull upstream master
-```
-
-There may be merge conflicts, so be sure to fix the files that git lists if they occur. That's it!
-
-## Thanks to the following
-
-* [BASSCSS](http://basscss.com)
-* [Jekyll](http://jekyllrb.com)
-* [Refills](http://refills.bourbon.io/)
-* [Solarized](http://ethanschoonover.com/solarized)
-* [Animate.css](http://daneden.github.io/animate.css/)
+---
 
 ## Contributing
 
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+Having trouble working with the theme? Found a typo in the documentation? Interested in adding a feature or [fixing a bug](https://github.com/mmistakes/minimal-mistakes/issues)? Then by all means [submit an issue](https://github.com/mmistakes/minimal-mistakes/issues/new) or [pull request](https://help.github.com/articles/using-pull-requests/). If this is your first pull request, it may be helpful to read up on the [GitHub Flow](https://guides.github.com/introduction/flow/) first.
+
+Minimal Mistakes has been designed as a base for you to customize and fit your site's unique needs. Please keep this in mind when requesting features and/or submitting pull requests. If it's not something that most people will use, I probably won't consider it. When in doubt ask. 
+
+This goes for author sidebar links and "share button" additions -- I have no intention of merging in every possibly option, the essentials are there to get you started :smile:.
+
+### Pull Requests
+
+When submitting a pull request:
+
+1. Clone the repo.
+2. Create a branch off of `master` and give it a meaningful name (e.g. `my-awesome-new-feature`) and describe the feature or fix.
+3. Open a pull request on GitHub.
+
+Theme documentation and demo pages can be found in the [`/docs`](docs) if submitting improvements, typo corrections, etc.
+
+## Development
+
+To set up your environment to develop this theme, run `bundle install`.
+
+To test the theme, run `bundle exec rake preview` and open your browser at `http://localhost:4000/test/`. This starts a Jekyll server using content in the `test/` directory. As modifications are made to the theme and test site, it will regenerate and you should see the changes in the browser after a refresh.
+
+---
+
+## Credits
+
+### Creator
+
+**Michael Rose**
+
+- <https://mademistakes.com>
+- <https://twitter.com/mmistakes>
+- <https://github.com/mmistakes>
+
+### Icons + Demo Images:
+
+- [The Noun Project](https://thenounproject.com) -- Garrett Knoll, Arthur Shlain, and [tracy tam](https://thenounproject.com/tracytam)
+- [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
+- [Unsplash](https://unsplash.com/)
+
+### Other:
+
+- [Jekyll](http://jekyllrb.com/)
+- [jQuery](http://jquery.com/)
+- [Susy](http://susy.oddbird.net/)
+- [Breakpoint](http://breakpoint-sass.com/)
+- [Magnific Popup](http://dimsemenov.com/plugins/magnific-popup/)
+- [FitVids.JS](http://fitvidsjs.com/)
+- Greedy Navigation - [lukejacksonn](http://codepen.io/lukejacksonn/pen/PwmwWV)
+- [jQuery Smooth Scroll](https://github.com/kswedberg/jquery-smooth-scroll)
+
+---
+
+## License
+
+The MIT License (MIT)
+
+Copyright (c) 2017 Michael Rose
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
