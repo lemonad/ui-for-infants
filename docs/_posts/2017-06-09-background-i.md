@@ -19,7 +19,7 @@ that before 12 months of age, most (but not all) infants were using both
 hands or multiple fingers rather than single fingers and specific gestures
 like tap and swipe:
 
-> ![Hourcade 2015](/img/hourcade-2015-hands-or-fingers.jpg)
+> ![Hourcade 2015](/assets/images/hourcade-2015-hands-or-fingers.jpg)
 
 Now, this is no surprise. It takes time for children to develop precise
 enough motor skills for how tablet touch-UIs are designed to be used. Some

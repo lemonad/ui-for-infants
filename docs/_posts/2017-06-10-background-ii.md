@@ -36,7 +36,7 @@ a new type of graphical user interface element, based on movement (see figure
 from Vidal 2014, below). A user selects an element by following its specific
 movements.
 
-> ![Vidal 2014](/img/pursuits-illustration.png)
+> ![Vidal 2014](/assets/images/pursuits-illustration.png)
 
 Pursuits utilizes the smooth pursuits movements of the eye, which is a
 type of movement that only happens when we are following something with our
