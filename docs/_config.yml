@@ -12,7 +12,7 @@ title_separator          : "-"
 name                     : "Jonas Nockert"
 description              : "A project blog for the KTH course Computer Graphics and Interaction (DGI17)"
 url                      : "https://lemonad.github.io"
-baseurl                  : "/docs"
+baseurl                  : "/ui-for-infants"
 repository               : "lemonad/ui-for-infants"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 # breadcrumbs            : false # true, false (default)
@@ -57,7 +57,7 @@ yandex_site_verification :
 twitter:
   username               : "lemonad"
 facebook:
-  username               : "jonasnockert"
+  username               : "lemonad"
   app_id                 :
   publisher              :
 og_image                 : # Open Graph/Twitter default site image
