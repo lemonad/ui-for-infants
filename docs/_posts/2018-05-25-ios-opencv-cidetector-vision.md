@@ -1,6 +1,6 @@
 ---
 title:   "OpenCV, CIDetector, or Vision for eye detection"
-date:    2017-06-25 22:14:49
+date:    2018-05-25 23:14:49
 excerpt: "Trying the new Vision library in iOS 11."
 
 ---

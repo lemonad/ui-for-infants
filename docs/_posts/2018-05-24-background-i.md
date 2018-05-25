@@ -1,6 +1,6 @@
 ---
 title:   "Background I: Apps for infants and toddler"
-date:    2017-06-09 11:21:29
+date:    2018-05-24 11:21:29
 excerpt: "What if we could design a user interface specifically for infants?"
 
 ---

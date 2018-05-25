@@ -1,6 +1,6 @@
 ---
 title:   "Background II: Gaze-driven interaction"
-date:    2017-06-10 14:34:03
+date:    2018-05-25 14:34:03
 excerpt: "Gaze-driven interaction without calibration using Pursuits."
 
 ---

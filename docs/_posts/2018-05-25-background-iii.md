@@ -1,6 +1,6 @@
 ---
 title:   "Background III: Pursuit for infants?"
-date:    2017-06-10 22:05:21
+date:    2018-05-25 22:05:21
 excerpt: "Smooth pursuits in infants reaches adult performance in just five months."
 
 ---
