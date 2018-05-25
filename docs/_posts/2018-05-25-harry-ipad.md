@@ -1,5 +1,5 @@
 ---
-title:   "Harry, 6.5 months old, using an iPad 10.5" (2017)
+title:   "Harry, 6.5 months old, using an iPad 10.5" (2017)"
 date:    2018-05-24 18:01:44
 excerpt: "At six months, at least some babies can make meaningful use of tablets"
 
