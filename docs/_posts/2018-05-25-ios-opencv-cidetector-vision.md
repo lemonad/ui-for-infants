@@ -1,8 +1,8 @@
 ---
-title:   "OpenCV, CIDetector, or Vision for eye detection"
+title:   "OpenCV, DLib, CIDetector, or Vision for eye detection"
 date:    2018-05-25 23:14:49
 excerpt: "Trying the new Vision library in iOS 11."
-
+published: false
 ---
 
 When it comes to iOS face feature detection, there are several options and
@@ -10,8 +10,8 @@ they all have their pros and cons:
 
 Using OpenCV I have never been able to reach good frame rates, even with just
 reading frames from the camera, resizing, and showing. In retrospect, after
-having worked much more with OpenCV during the MVK course this spring, I think
-there are options left to try.
+having worked much more with OpenCV lately, I think there are options left to
+try.
 
 In regards to CIDetector, I implemented something similar to Pursuits last
 summer and with good lighting and some concentration from the person using it,
