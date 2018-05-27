@@ -2,7 +2,7 @@
 title:   "General algorithm for pupil tracking"
 date:    2018-05-27 22:50:58
 excerpt: "General algorithm for pupil tracking"
-published: false
+published: true
 
 ---
 Given an image as input, the traditional sequence is to detect faces, resulting in a bounded area for each face (1). Given this bound and general anatomical proportions, detect the areas around the eyes (2). For each eye, localize the pupil in the center of the iris (4).
