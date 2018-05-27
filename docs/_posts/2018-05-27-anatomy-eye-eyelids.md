@@ -14,5 +14,5 @@ Visually, the eye has a number of distinct features that are relevant to eye and
 
 <figure>
   <img src="{{ site.url }}{{ site.baseurl }}/assets/images/harrys-eye.png" alt="Illustration of the eye">
-  <figcaption>Useful terminology for anatomy of eye and eyelids. Personal photograph by author. Aug 6, 2017.</figcaption>
+  <figcaption>Useful terminology for anatomy of eye and eyelids. Personal photograph/illustration by author. May 27, 2018.</figcaption>
 </figure>
