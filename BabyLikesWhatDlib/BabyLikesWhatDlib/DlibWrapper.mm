@@ -12,12 +12,12 @@
 #include <dlib/image_io.h>
 #include <opencv2/opencv.hpp>
 #import <UIKit/UIKit.h>
+#include "Flags.h"
 #import "KalmanPoint.h"
 #import "KalmanRect.h"
 #import "DlibWrapper.h"
 #import "PupilDetector.h"
 
-#define OPTIMIZE_NO_LANDMARKS
 
 using std::vector;
 
@@ -44,6 +44,11 @@ using std::vector;
 
 
 - (instancetype)init {
+    #ifdef SHOW_CAMERA_AND_LANDMARKS
+    NSLog(@"Warning: Showing landmarks (slow) [SHOW_CAMERA_AND_LANDMARKS = 1 in flags.h].\n");
+    #else
+    NSLog(@"Warning: Optimized version: Not showing landmarks [SHOW_CAMERA_AND_LANDMARKS = 0 in flags.h].\n");
+    #endif
     self = [super init];
     if (self) {
         _prepared = NO;
@@ -279,9 +284,9 @@ using std::vector;
 
     // return @[[NSValue valueWithCGPoint: left_pupil_offset], [NSValue valueWithCGPoint: right_pupil_offset]];
 
+    #ifdef SHOW_CAMERA_AND_LANDMARKS
     dlib::point pp2(r3.left() + pupil.x, r3.top() + pupil.y);
 
-#ifndef OPTIMIZE_NO_LANDMARKS
     unsigned char bw = 255;
     unsigned char bwinv = 255 - bw;
 
@@ -362,7 +367,7 @@ using std::vector;
 //        position++;
 //    }
     CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
-#endif
+    #endif
 
     return @[[NSValue valueWithCGPoint: left_pupil_offset], [NSValue valueWithCGPoint: right_pupil_offset]];
 }

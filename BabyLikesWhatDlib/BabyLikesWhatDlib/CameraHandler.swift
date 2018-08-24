@@ -162,9 +162,15 @@ class CameraHandler: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate, AVC
 //            let cameraImage = CIImage(cvImageBuffer: sampleBuffer as! CVImageBuffer).oriented(forExifOrientation: exifOrientation)
 
             DispatchQueue.main.async { [unowned self] in
-                self.delegate?.captured(image: uiImage,
-                                        leftPupilOffset: pupilOffsets?[0] as! CGPoint,
-                                        rightPupilOffset: pupilOffsets?[1] as! CGPoint)
+                if SHOW_CAMERA_AND_LANDMARKS > 0 {
+                    self.delegate?.captured(image: uiImage,
+                                            leftPupilOffset: pupilOffsets?[0] as! CGPoint,
+                                            rightPupilOffset: pupilOffsets?[1] as! CGPoint)
+                } else {
+                    self.delegate?.captured(image: UIImage(),
+                                            leftPupilOffset: pupilOffsets?[0] as! CGPoint,
+                                            rightPupilOffset: pupilOffsets?[1] as! CGPoint)
+                }
             }
         }
     }

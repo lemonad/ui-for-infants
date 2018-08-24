@@ -10,12 +10,11 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
+
 let windowSize = 60  // Need to change ranges too.
 
 class GameViewController: UIViewController, CameraHandlerDelegate {
     var cameraHandler: CameraHandler!
-    let openCVWrapper = OpenCVWrapper()
-    let dlibWrapper = DlibWrapper()
     var scene: GameScene!
 
     private var windowIndex = 0
@@ -139,10 +138,12 @@ class GameViewController: UIViewController, CameraHandlerDelegate {
 
         windowIndex = (windowIndex + 1) % windowSize
 
-//        let tex = SKTexture(image: image)
-//        DispatchQueue.main.async {
-//            self.scene.cameraNode!.texture = tex
-//        }
+        if SHOW_CAMERA_AND_LANDMARKS > 0 {
+            let tex = SKTexture(image: image)
+            DispatchQueue.main.async {
+                self.scene.cameraNode!.texture = tex
+            }
+        }
     }
 
     override var shouldAutorotate: Bool {
