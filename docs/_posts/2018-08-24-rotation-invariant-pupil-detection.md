@@ -1,6 +1,6 @@
 ---
 title:   "Rotation invariant pupil detection (well, almost)"
-date:    2018-08-23 14:43:29
+date:    2018-08-24 17:37:21
 excerpt: "Always transforming face to be level makes the eye corner and pupil detection rotation invariant. At least until the head tilt becomes too large."
 published: true
 
