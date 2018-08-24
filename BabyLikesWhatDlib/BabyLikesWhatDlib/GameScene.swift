@@ -96,8 +96,8 @@ class GameScene: SKScene {
         self.addChild(rightEyeNode!)
 
         if SHOW_CAMERA_AND_LANDMARKS > 0 {
-            self.cameraNode = SKSpriteNode(texture: SKTexture(imageNamed: "Heart"), size: CGSize(width: 850, height: 500))
-            // self.cameraNode = SKSpriteNode(texture: SKTexture(imageNamed: "Heart"), size: CGSize(width: 2000, height: 1300))
+            // self.cameraNode = SKSpriteNode(texture: SKTexture(imageNamed: "Heart"), size: CGSize(width: 850, height: 500))
+            self.cameraNode = SKSpriteNode(texture: SKTexture(imageNamed: "Heart"), size: CGSize(width: 2000, height: 1300))
             self.cameraNode!.position.x = 0
             self.cameraNode!.position.y = 0
             self.cameraNode!.zPosition = 9

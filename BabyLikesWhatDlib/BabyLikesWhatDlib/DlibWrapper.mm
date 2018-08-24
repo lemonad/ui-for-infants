@@ -315,27 +315,20 @@ using std::vector;
     draw_solid_circle(img, right_outer_eye_corner_pt, radius, bw);
     draw_solid_circle(img, right_outer_eye_corner_pt, radius - 2, bwinv);
 
-//    // and draw them into the image (samplebuffer)
-//    for (unsigned long k = 0; k < shape.num_parts(); k++) {
-//        dlib::point p = shape.part(k);
-//        draw_solid_circle(img, p, radius, bw);
-//        draw_solid_circle(img, p, radius - 2, bwinv);
-//    }
+    /* Pupils in face*/
+    dlib::point ipp = inv_transf(pp);
+    dlib::point ipp2 = inv_transf(pp2);
+    draw_solid_circle(img, ipp, radius, bw);
+    draw_solid_circle(img, ipp2, radius, bw);
+    draw_solid_circle(img, ipp, radius - 2, bwinv);
+    draw_solid_circle(img, ipp2, radius - 2, bwinv);
 
-//    /* Pupils in face*/
-//    dlib::point ipp = inv_transf(pp);
-//    dlib::point ipp2 = inv_transf(pp2);
-//    draw_solid_circle(img, ipp, radius, bw);
-//    draw_solid_circle(img, ipp2, radius, bw);
-//    draw_solid_circle(img, ipp, radius - 2, bwinv);
-//    draw_solid_circle(img, ipp2, radius - 2, bwinv);
-//
-//    // and draw them into the image (samplebuffer)
-//    for (unsigned long k = 0; k < shape.num_parts(); k++) {
-//        dlib::point p = shape.part(k);
-//        draw_solid_circle(img, p, radius, bw);
-//        draw_solid_circle(img, p, radius - 2, bwinv);
-//    }
+    // and draw them into the image (samplebuffer)
+    for (unsigned long k = 0; k < shape.num_parts(); k++) {
+        dlib::point p = shape.part(k);
+        draw_solid_circle(img, p, radius, bw);
+        draw_solid_circle(img, p, radius - 2, bwinv);
+    }
 
     // lets put everything back where it belongs
     CVPixelBufferLockBaseAddress(imageBuffer, 0);
