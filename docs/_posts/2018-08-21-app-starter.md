@@ -16,7 +16,7 @@ This app does basically what I set out to do in
 the [project specification](https://lemonad.github.io/ui-for-infants/assets/pdf/jonas-nockert-specification-20180525.pdf):
 
 <figure>
-  <img src="{{ site.url }}{{ site.baseurl }}/assets/images/app-start.png" alt="">
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/images/ipad-app.png" alt="">
   <figcaption>Sketch from my project specification. Personal image by author. May 2018.</figcaption>
 </figure>
 
