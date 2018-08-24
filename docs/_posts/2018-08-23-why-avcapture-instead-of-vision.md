@@ -5,10 +5,10 @@ excerpt: "Three generations of iOS detectors"
 published: true
 
 ---
-Instead of letting OpenCVs (or Dlibs) face detectors work on the entirety of
-the image, I leverage Apples own (much faster in this case) face detection,
-pick the largest face (which is presumably the user of the app), and send
-that to OpenCV (DLib).
+Instead of letting OpenCVs face detectors work on the entirety of the image,
+I could leverage Apples own (much faster in this case) face detection, pick
+the largest face (which is presumably the user of the app), and send that to
+OpenCV (or perhaps DLib, pending testing).
 
 <figure>
   <img src="{{ site.url }}{{ site.baseurl }}/assets/images/face-detector-landscape.png" alt="">
