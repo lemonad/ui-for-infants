@@ -1,0 +1,339 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AC4FECD81EF004D000CAD464 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4FECD71EF004D000CAD464 /* AppDelegate.swift */; };
+		AC4FECDA1EF004D000CAD464 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = AC4FECD91EF004D000CAD464 /* GameScene.sks */; };
+		AC4FECDC1EF004D000CAD464 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = AC4FECDB1EF004D000CAD464 /* Actions.sks */; };
+		AC4FECDE1EF004D000CAD464 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4FECDD1EF004D000CAD464 /* GameScene.swift */; };
+		AC4FECE01EF004D000CAD464 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4FECDF1EF004D000CAD464 /* GameViewController.swift */; };
+		AC4FECE31EF004D000CAD464 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC4FECE11EF004D000CAD464 /* Main.storyboard */; };
+		AC4FECE51EF004D000CAD464 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC4FECE41EF004D000CAD464 /* Assets.xcassets */; };
+		AC4FECE81EF004D000CAD464 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC4FECE61EF004D000CAD464 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AC4FECD41EF004D000CAD464 /* BabyLikesWhat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabyLikesWhat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC4FECD71EF004D000CAD464 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AC4FECD91EF004D000CAD464 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		AC4FECDB1EF004D000CAD464 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		AC4FECDD1EF004D000CAD464 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		AC4FECDF1EF004D000CAD464 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		AC4FECE21EF004D000CAD464 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AC4FECE41EF004D000CAD464 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AC4FECE71EF004D000CAD464 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AC4FECE91EF004D000CAD464 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AC4FECD11EF004D000CAD464 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AC4FECCB1EF004D000CAD464 = {
+			isa = PBXGroup;
+			children = (
+				AC4FECD61EF004D000CAD464 /* BabyLikesWhat */,
+				AC4FECD51EF004D000CAD464 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AC4FECD51EF004D000CAD464 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AC4FECD41EF004D000CAD464 /* BabyLikesWhat.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AC4FECD61EF004D000CAD464 /* BabyLikesWhat */ = {
+			isa = PBXGroup;
+			children = (
+				AC4FECD71EF004D000CAD464 /* AppDelegate.swift */,
+				AC4FECD91EF004D000CAD464 /* GameScene.sks */,
+				AC4FECDB1EF004D000CAD464 /* Actions.sks */,
+				AC4FECDD1EF004D000CAD464 /* GameScene.swift */,
+				AC4FECDF1EF004D000CAD464 /* GameViewController.swift */,
+				AC4FECE11EF004D000CAD464 /* Main.storyboard */,
+				AC4FECE41EF004D000CAD464 /* Assets.xcassets */,
+				AC4FECE61EF004D000CAD464 /* LaunchScreen.storyboard */,
+				AC4FECE91EF004D000CAD464 /* Info.plist */,
+			);
+			path = BabyLikesWhat;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AC4FECD31EF004D000CAD464 /* BabyLikesWhat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC4FECEC1EF004D000CAD464 /* Build configuration list for PBXNativeTarget "BabyLikesWhat" */;
+			buildPhases = (
+				AC4FECD01EF004D000CAD464 /* Sources */,
+				AC4FECD11EF004D000CAD464 /* Frameworks */,
+				AC4FECD21EF004D000CAD464 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BabyLikesWhat;
+			productName = BabyLikesWhat;
+			productReference = AC4FECD41EF004D000CAD464 /* BabyLikesWhat.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AC4FECCC1EF004D000CAD464 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Jonas Nockert";
+				TargetAttributes = {
+					AC4FECD31EF004D000CAD464 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 2RXC8T62T2;
+						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = AC4FECCF1EF004D000CAD464 /* Build configuration list for PBXProject "BabyLikesWhat" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AC4FECCB1EF004D000CAD464;
+			productRefGroup = AC4FECD51EF004D000CAD464 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AC4FECD31EF004D000CAD464 /* BabyLikesWhat */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AC4FECD21EF004D000CAD464 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC4FECE31EF004D000CAD464 /* Main.storyboard in Resources */,
+				AC4FECDA1EF004D000CAD464 /* GameScene.sks in Resources */,
+				AC4FECE51EF004D000CAD464 /* Assets.xcassets in Resources */,
+				AC4FECE81EF004D000CAD464 /* LaunchScreen.storyboard in Resources */,
+				AC4FECDC1EF004D000CAD464 /* Actions.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AC4FECD01EF004D000CAD464 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC4FECDE1EF004D000CAD464 /* GameScene.swift in Sources */,
+				AC4FECE01EF004D000CAD464 /* GameViewController.swift in Sources */,
+				AC4FECD81EF004D000CAD464 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AC4FECE11EF004D000CAD464 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC4FECE21EF004D000CAD464 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AC4FECE61EF004D000CAD464 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC4FECE71EF004D000CAD464 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AC4FECEA1EF004D000CAD464 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		AC4FECEB1EF004D000CAD464 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AC4FECED1EF004D000CAD464 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2RXC8T62T2;
+				INFOPLIST_FILE = BabyLikesWhat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Yatta.BabyLikesWhat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		AC4FECEE1EF004D000CAD464 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2RXC8T62T2;
+				INFOPLIST_FILE = BabyLikesWhat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Yatta.BabyLikesWhat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AC4FECCF1EF004D000CAD464 /* Build configuration list for PBXProject "BabyLikesWhat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC4FECEA1EF004D000CAD464 /* Debug */,
+				AC4FECEB1EF004D000CAD464 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC4FECEC1EF004D000CAD464 /* Build configuration list for PBXNativeTarget "BabyLikesWhat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC4FECED1EF004D000CAD464 /* Debug */,
+				AC4FECEE1EF004D000CAD464 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AC4FECCC1EF004D000CAD464 /* Project object */;
+}
