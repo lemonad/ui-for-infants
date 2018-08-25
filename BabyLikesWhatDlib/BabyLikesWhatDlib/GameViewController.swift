@@ -88,34 +88,18 @@ class GameViewController: UIViewController, CameraHandlerDelegate {
         var like2: [Double] = []
 
         var index = windowIndex
-        var r1_check_level = 0
-        var level_reached = false
-        var level = 0
-        //for level in 0...5 {
-            for _ in 1...30 {
-                left.append(leftEyeWindow[index])
-                right.append(rightEyeWindow[index])
-                like1.append(like1Window[index])
-                index = (index - 1 + windowSize) % windowSize
-            }
+        for _ in 1...30 {
+            left.append(leftEyeWindow[index])
+            right.append(rightEyeWindow[index])
+            like1.append(like1Window[index])
+            like2.append(like2Window[index])
+            index = (index - 1 + windowSize) % windowSize
+        }
 
-            r1_left[level] = CGFloat(CorrelationCoefficient(X: left, Y: like1))
-            r1_right[level] = CGFloat(CorrelationCoefficient(X: right, Y: like1))
-//            if level_reached {
-//                continue
-//            }
-            let r1_mean = (r1_left[level] + r1_right[level]) / 2.0
-            if r1_mean > 0.6 {
-                r1_check_level = level + 1
-            } else {
-                level_reached = true
-                //                for rest_level in (level + 1)...5 {
-                //                    r1_left[rest_level] = 0.0
-                //                    r1_right[rest_level] = 0.0
-                //                }
-                //                break
-            }
-        // }
+        r1_left[0] = CGFloat(CorrelationCoefficient(X: left, Y: like1))
+        r1_right[0] = CGFloat(CorrelationCoefficient(X: right, Y: like1))
+        let r1_mean = (r1_left[0] + r1_right[0]) / 2.0
+
         r1_level = max(r1_mean, 0.0)
         if r1_level >= 0.6 {
             scene.percent1Node?.isPaused = false
@@ -123,37 +107,12 @@ class GameViewController: UIViewController, CameraHandlerDelegate {
             scene.percent1Node?.isPaused = true
         }
 
-        left.removeAll()
-        right.removeAll()
         index = windowIndex
-        var r2_check_level = 0
-        level_reached = false
-        // for level in 0...5 {
-            for _ in 1...30 {
-                left.append(leftEyeWindow[index])
-                right.append(rightEyeWindow[index])
-                like2.append(like2Window[index])
-                index = (index - 1 + windowSize) % windowSize
-            }
 
-            r2_left[level] = CGFloat(CorrelationCoefficient(X: left, Y: like2))
-            r2_right[level] = CGFloat(CorrelationCoefficient(X: right, Y: like2))
-//            if level_reached {
-//                continue
-//            }
-            let r2_mean = (r2_left[level] + r2_right[level]) / 2.0
-            // print(r2_mean)
-            if r2_mean > 0.6 {
-                r2_check_level = level + 1
-            } else {
-                level_reached = true
-                //                for rest_level in (level+1)...5 {
-                //                    r2_left[rest_level] = 0.0
-                //                    r2_right[rest_level] = 0.0
-                //                }
-                //                break
-            }
-        // }
+        r2_left[0] = CGFloat(CorrelationCoefficient(X: left, Y: like2))
+        r2_right[0] = CGFloat(CorrelationCoefficient(X: right, Y: like2))
+        let r2_mean = (r2_left[0] + r2_right[0]) / 2.0
+
         r2_level = max(r2_mean, 0.0)
         if r2_level >= 0.6 {
             scene.percent2Node?.isPaused = false

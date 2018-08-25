@@ -13,6 +13,4 @@
 
 @interface OpenCVWrapper : NSObject
 
-+ (CGPoint)getPupilPoint:(UIImage *)eyeFrame;
-
 @end

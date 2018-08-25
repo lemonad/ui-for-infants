@@ -16,18 +16,4 @@
 
 @implementation OpenCVWrapper
 
-+ (CGPoint)getPupilPoint:(UIImage*)eyeFrame
-{
-    cv::Mat frame;
-    cv::Rect eyeRegion(0, 0, eyeFrame.size.width, eyeFrame.size.height);
-
-    UIImageToMat(eyeFrame, frame, true);
-    // cv::Point pupil = findEyeCenter(frame, eyeRegion, "");
-    // cv::Point pupil = findEyeCenter(frame);
-    cv::Point pupil;
-
-    CGPoint point = CGPointMake(pupil.x, pupil.y);
-    return point;
-}
-
 @end

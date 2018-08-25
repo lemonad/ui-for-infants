@@ -198,16 +198,6 @@ using std::vector;
     // TODO Check that detection actually found something (but this never seem to fail?)
     dlib::full_object_detection shape = sp(img, oneFaceRect);
 
-    //        dlib::point p0 = shape.part(0);
-    //        dlib::point p1 = shape.part(1);
-    //        long xmin = MIN(p0.x(), p1.x());
-    //        long xmax = MAX(p0.x(), p1.x());
-    //        long ymin = MIN(p0.y(), p1.y());
-    //        long ymax = MAX(p0.y(), p1.y());
-    //        long xdist = xmax - xmin;
-    //        dlib::rectangle r(p1.x() - 0.2 * xdist, ymin - 0.3 * xdist, xmax + 0.2 * xdist, ymax + 0.3 * xdist);
-    //        draw_rectangle(img, r, dlib::rgb_pixel(0, 255, 255), 1);
-
     dlib::array2d<dlib::rgb_pixel> face_chip;
     dlib::rectangle shape_rect = shape.get_rect();
 
@@ -219,12 +209,6 @@ using std::vector;
 
     dlib::point_transform_affine transf = dlib::get_mapping_to_chip(face_chip_details);
     dlib::point_transform_affine inv_transf = dlib::inv(transf);
-
-    //        for (long r = 0; r < face_chip.nr(); ++r) {
-    //            for (long c = 0; c < face_chip.nc(); ++c) {
-    //                dlib::assign_pixel(img[r][c], face_chip[r][c]);
-    //            }
-    //        }
 
     // The 5 point face annotation scheme is assumed to be:
     // - det part 0 == left eye corner, outside part of eye.
@@ -245,13 +229,11 @@ using std::vector;
     long ymin = MIN(p0.y(), p1.y());
     long ymax = MAX(p0.y(), p1.y());
     long xdist = p0.x() - p1.x();
-    // dlib::rectangle r2(p1.x(), ymin - 0.4 * xdist, p0.x(), ymax + 0.3 * xdist);
     dlib::rectangle r2(p1.x() - xdist * 0.25, ymin - 0.4 * xdist, p0.x() + xdist * 0.25, ymax + 0.3 * xdist);
 
     ymin = MIN(p2.y(), p3.y());
     ymax = MAX(p2.y(), p3.y());
     xdist = p3.x() - p2.x();
-    // dlib::rectangle r3(p2.x(), ymin - 0.4 * xdist, p3.x(), ymax + 0.3 * xdist);
     dlib::rectangle r3(p2.x() - xdist * 0.25, ymin - 0.4 * xdist, p3.x() + xdist * 0.25, ymax + 0.3 * xdist);
 
     auto simg = dlib::sub_image(face_chip, r2);
@@ -259,7 +241,6 @@ using std::vector;
     dlib::assign_image(img_gray, simg);
     cv::Mat left_eye = dlib::toMat(img_gray);
 
-    // cv::Point pupil = findEyeCenter(right_eye);
     cv::Mat eye_mask_eroded, eye_subregion_mask;
     cv::Point pupil = [PupilDetector cdfDetection:left_eye out1:eye_mask_eroded];
     [leftPupilKalman correct:pupil];

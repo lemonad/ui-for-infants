@@ -151,7 +151,6 @@ class CameraHandler: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate, AVC
         if currentMetadata.isEmpty {
             self.delegate?.noEyeCaptured()
         } else {
-            print("Metadata!")
             // GameScene.eyeLabel.alpha = 1
             let boundsArray = currentMetadata
                 .compactMap { $0 as? AVMetadataFaceObject }
@@ -167,8 +166,8 @@ class CameraHandler: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate, AVC
             }
             // guard let uiImage = uiImageFromSampleBuffer(sampleBuffer: sampleBuffer) else { return }
 
-//            let exifOrientation = self.exifOrientationFromDeviceOrientation()
-//            let cameraImage = CIImage(cvImageBuffer: sampleBuffer as! CVImageBuffer).oriented(forExifOrientation: exifOrientation)
+            // let exifOrientation = self.exifOrientationFromDeviceOrientation()
+            // let cameraImage = CIImage(cvImageBuffer: sampleBuffer as! CVImageBuffer).oriented(forExifOrientation: exifOrientation)
 
             DispatchQueue.main.async { [unowned self] in
                 if SHOW_CAMERA_AND_LANDMARKS > 0 {
