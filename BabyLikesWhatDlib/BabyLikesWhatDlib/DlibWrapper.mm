@@ -44,7 +44,7 @@ using std::vector;
 
 
 - (instancetype)init {
-    #ifdef SHOW_CAMERA_AND_LANDMARKS
+    #if SHOW_CAMERA_AND_LANDMARKS > 0
     NSLog(@"Warning: Showing landmarks (slow) [SHOW_CAMERA_AND_LANDMARKS = 1 in flags.h].\n");
     #else
     NSLog(@"Warning: Optimized version: Not showing landmarks [SHOW_CAMERA_AND_LANDMARKS = 0 in flags.h].\n");
@@ -284,7 +284,7 @@ using std::vector;
 
     // return @[[NSValue valueWithCGPoint: left_pupil_offset], [NSValue valueWithCGPoint: right_pupil_offset]];
 
-    #ifdef SHOW_CAMERA_AND_LANDMARKS
+    #if SHOW_CAMERA_AND_LANDMARKS > 0
     dlib::point pp2(r3.left() + pupil.x, r3.top() + pupil.y);
 
     unsigned char bw = 255;

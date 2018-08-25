@@ -18,8 +18,8 @@ class GameScene: SKScene {
     var like2Node: SKSpriteNode?
     var heart1Node: SKSpriteNode?
     var heart2Node: SKSpriteNode?
-    var leftEyeNode: SKSpriteNode?
-    var rightEyeNode: SKSpriteNode?
+    var percent1Node: SKSpriteNode?
+    var percent2Node: SKSpriteNode?
     var cameraNode: SKSpriteNode?
     var faceRectNode: SKSpriteNode?
     var r1LeftLabel = SKLabelNode()
@@ -29,6 +29,22 @@ class GameScene: SKScene {
 
 
     override func didMove(to view: SKView) {
+        let upArrowPath = UIBezierPath()
+        upArrowPath.move(to: CGPoint(x: 9.5, y: 313.5))
+        upArrowPath.addCurve(to: CGPoint(x: 129.5, y: 232.5), controlPoint1: CGPoint(x: 9.5, y: 313.5), controlPoint2: CGPoint(x: 91.5, y: 313.5))
+        upArrowPath.addCurve(to: CGPoint(x: 105.5, y: 89.5), controlPoint1: CGPoint(x: 167.5, y: 151.5), controlPoint2: CGPoint(x: 122.5, y: 99.5))
+        upArrowPath.addCurve(to: CGPoint(x: 53.5, y: 149.5), controlPoint1: CGPoint(x: 88.5, y: 79.5), controlPoint2: CGPoint(x: 35.5, y: 76.5))
+        upArrowPath.addCurve(to: CGPoint(x: 211.5, y: 180.5), controlPoint1: CGPoint(x: 71.5, y: 222.5), controlPoint2: CGPoint(x: 155.5, y: 225.5))
+        upArrowPath.addCurve(to: CGPoint(x: 284.5, y: -47.5), controlPoint1: CGPoint(x: 267.5, y: 135.5), controlPoint2: CGPoint(x: 284.5, y: -47.5))
+        upArrowPath.apply(CGAffineTransform(translationX: -9.5, y: -313.5))
+        upArrowPath.apply(CGAffineTransform(scaleX: 1, y: -1))
+
+        let downArrowPath = UIBezierPath()
+        downArrowPath.move(to: CGPoint(x: 281.5, y: 141.5))
+        downArrowPath.addCurve(to: CGPoint(x: 6.5, y: 364.5), controlPoint1: CGPoint(x: 150.5, y: 135.5), controlPoint2: CGPoint(x: 54.5, y: 157.5))
+        downArrowPath.apply(CGAffineTransform(translationX: -281.5, y: -141.5))
+        downArrowPath.apply(CGAffineTransform(scaleX: 1, y: -1))
+
         if SHOW_CORRELATION_BARS > 0 {
             r1LeftLabel = SKLabelNode(fontNamed: "Chalkduster")
             r1LeftLabel.text = "r1-left"
@@ -75,25 +91,44 @@ class GameScene: SKScene {
         self.heart1Node = self.childNode(withName: "//CppHeart") as? SKSpriteNode
         if let likenode = self.like1Node {
             // Was 290 for y.
-            let oscillate = SKAction.oscillation(amplitude_x: 800, amplitude_y: 0, timePeriod: 6, midPoint: CGPoint(x: self.frame.midX, y: 550))
+            let oscillate = SKAction.oscillation(amplitudeX: 800, amplitudeY: 0, timePeriod: 6, midPoint: CGPoint(x: self.frame.midX, y: 550), offset: 1 * CGFloat.pi) // 1.4
             likenode.run(SKAction.repeatForever(oscillate))
         }
 
         self.like2Node = self.childNode(withName: "//Cat") as? SKSpriteNode
         self.heart2Node = self.childNode(withName: "//CatHeart") as? SKSpriteNode
         if let likenode = self.like2Node {
-            let oscillate = SKAction.oscillation(amplitude_x: -800, amplitude_y: 0, timePeriod: 6, midPoint: CGPoint(x: self.frame.midX, y: -550))
+            let oscillate = SKAction.oscillation(amplitudeX: 800, amplitudeY: 0, timePeriod: 6, midPoint: CGPoint(x: self.frame.midX, y: -550), offset: 0)
             likenode.run(SKAction.repeatForever(oscillate))
         }
 
-        self.leftEyeNode = SKSpriteNode(texture: SKTexture(imageNamed: "Heart"))
-        self.rightEyeNode = SKSpriteNode(texture: SKTexture(imageNamed: "Heart"))
-        self.leftEyeNode!.position.x = -600
-        self.leftEyeNode!.position.y = 0
-        self.rightEyeNode!.position.x = 600
-        self.rightEyeNode!.position.y = 0
-        self.addChild(leftEyeNode!)
-        self.addChild(rightEyeNode!)
+        self.percent1Node = SKSpriteNode(texture: SKTexture(imageNamed: "Heart"))
+        self.percent2Node = SKSpriteNode(texture: SKTexture(imageNamed: "Heart"))
+        self.percent1Node!.xScale = 0.75
+        self.percent1Node!.yScale = 0.75
+        self.percent2Node!.xScale = 0.75
+        self.percent2Node!.yScale = 0.75
+        self.percent1Node!.position.x = 600
+        self.percent1Node!.position.y = -50
+        self.percent2Node!.position.x = -600
+        self.percent2Node!.position.y = -50
+        self.percent1Node!.zPosition = 20
+        self.percent2Node!.zPosition = 20
+        self.addChild(percent1Node!)
+        self.addChild(percent2Node!)
+
+        let ratio:CGFloat = 101.0 / 50.0
+        let speed:CGFloat = 100
+        let move1 = SKAction.follow(upArrowPath.cgPath, asOffset: true, orientToPath: false, speed: speed * ratio) // 101
+        percent1Node!.run(move1, completion: {
+            print("up wins")
+        })
+        percent1Node?.isPaused = true
+        let move2 = SKAction.follow(downArrowPath.cgPath, asOffset: true, orientToPath: false, speed: speed) // 50
+        percent2Node!.run(move2, completion: {
+            print("down wins")
+            })
+        percent2Node?.isPaused = true
 
         if SHOW_CAMERA_AND_LANDMARKS > 0 {
             // self.cameraNode = SKSpriteNode(texture: SKTexture(imageNamed: "Heart"), size: CGSize(width: 850, height: 500))
@@ -107,8 +142,11 @@ class GameScene: SKScene {
 
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
-        self.heart1Node!.alpha = CGFloat(self.viewController.r1_level) / 6.0
-        self.heart2Node!.alpha = CGFloat(self.viewController.r2_level) / 6.0
+        self.heart1Node!.alpha = CGFloat(self.viewController.r1_level)
+        self.heart2Node!.alpha = CGFloat(self.viewController.r2_level)
+
+//        self.percent1Node?.position.y = CGFloat(self.viewController.r1_percent * 100)
+//        self.percent2Node?.position.y = CGFloat(self.viewController.r2_percent * 100)
 
         if SHOW_CORRELATION_BARS > 0 {
             for i in 0...5 {
@@ -132,9 +170,9 @@ class GameScene: SKScene {
 
 
 extension SKAction {
-    static func oscillation(amplitude_x ax: CGFloat, amplitude_y ay: CGFloat, timePeriod t: CGFloat, midPoint: CGPoint) -> SKAction {
+    static func oscillation(amplitudeX ax: CGFloat, amplitudeY ay: CGFloat, timePeriod t: CGFloat, midPoint: CGPoint, offset: CGFloat) -> SKAction {
         let action = SKAction.customAction(withDuration: Double(t)) { node, currentTime in
-            let o = 2.0 * CGFloat.pi * currentTime / t
+            let o = (2.0 * CGFloat.pi) * currentTime / t  + offset
             let displacement_x = ax * sin(o)
             let displacement_y = ay * cos(o)
             node.position.x = midPoint.x + displacement_x
