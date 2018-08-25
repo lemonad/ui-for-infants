@@ -14,6 +14,7 @@ class GameScene: SKScene {
     var viewController: GameViewController!
 
     private var label: SKLabelNode?
+    var eyeLabel: SKLabelNode?
     var like1Node: SKSpriteNode?
     var like2Node: SKSpriteNode?
     var heart1Node: SKSpriteNode?
@@ -44,6 +45,9 @@ class GameScene: SKScene {
         downArrowPath.addCurve(to: CGPoint(x: 6.5, y: 364.5), controlPoint1: CGPoint(x: 150.5, y: 135.5), controlPoint2: CGPoint(x: 54.5, y: 157.5))
         downArrowPath.apply(CGAffineTransform(translationX: -281.5, y: -141.5))
         downArrowPath.apply(CGAffineTransform(scaleX: 1, y: -1))
+
+        eyeLabel = self.childNode(withName: "//Eyes") as? SKLabelNode
+        eyeLabel?.alpha = 0
 
         if SHOW_CORRELATION_BARS > 0 {
             r1LeftLabel = SKLabelNode(fontNamed: "Chalkduster")

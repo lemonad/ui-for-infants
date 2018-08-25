@@ -10,7 +10,8 @@ import AVFoundation
 import UIKit
 
 protocol CameraHandlerDelegate: class {
-    func captured(image: UIImage, leftPupilOffset: CGPoint, rightPupilOffset: CGPoint)
+    func noEyeCaptured()
+    func eyeCaptured(image: UIImage, leftPupilOffset: CGPoint, rightPupilOffset: CGPoint)
 }
 
 class CameraHandler: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate, AVCaptureMetadataOutputObjectsDelegate {
@@ -147,7 +148,11 @@ class CameraHandler: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate, AVC
     // MARK: AVCaptureVideoDataOutputSampleBufferDelegate
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
 
-        if !currentMetadata.isEmpty {
+        if currentMetadata.isEmpty {
+            self.delegate?.noEyeCaptured()
+        } else {
+            print("Metadata!")
+            // GameScene.eyeLabel.alpha = 1
             let boundsArray = currentMetadata
                 .compactMap { $0 as? AVMetadataFaceObject }
                 .map { (faceObject) -> NSValue in
@@ -156,20 +161,25 @@ class CameraHandler: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate, AVC
             }
 
             var pupilOffsets = dlib_wrapper?.doWork(on: sampleBuffer, inRects: boundsArray)
-            guard let uiImage = uiImageFromSampleBuffer(sampleBuffer: sampleBuffer) else { return }
+            if (pupilOffsets?.count)! < 2 {
+                self.delegate?.noEyeCaptured()
+                return
+            }
+            // guard let uiImage = uiImageFromSampleBuffer(sampleBuffer: sampleBuffer) else { return }
 
 //            let exifOrientation = self.exifOrientationFromDeviceOrientation()
 //            let cameraImage = CIImage(cvImageBuffer: sampleBuffer as! CVImageBuffer).oriented(forExifOrientation: exifOrientation)
 
             DispatchQueue.main.async { [unowned self] in
                 if SHOW_CAMERA_AND_LANDMARKS > 0 {
-                    self.delegate?.captured(image: uiImage,
-                                            leftPupilOffset: pupilOffsets?[0] as! CGPoint,
-                                            rightPupilOffset: pupilOffsets?[1] as! CGPoint)
+                    let uiImage = self.uiImageFromSampleBuffer(sampleBuffer: sampleBuffer)
+                    self.delegate?.eyeCaptured(image: uiImage!,
+                                               leftPupilOffset: pupilOffsets?[0] as! CGPoint,
+                                               rightPupilOffset: pupilOffsets?[1] as! CGPoint)
                 } else {
-                    self.delegate?.captured(image: UIImage(),
-                                            leftPupilOffset: pupilOffsets?[0] as! CGPoint,
-                                            rightPupilOffset: pupilOffsets?[1] as! CGPoint)
+                    self.delegate?.eyeCaptured(image: UIImage(),
+                                               leftPupilOffset: pupilOffsets?[0] as! CGPoint,
+                                               rightPupilOffset: pupilOffsets?[1] as! CGPoint)
                 }
             }
         }

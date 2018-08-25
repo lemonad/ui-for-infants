@@ -70,14 +70,15 @@ class GameViewController: UIViewController, CameraHandlerDelegate {
         }
     }
 
-    func captured(image: UIImage, leftPupilOffset: CGPoint, rightPupilOffset: CGPoint) {
-        // leftEye.image = wrapper.getEye(image)
-        // leftEye.image = image
+    func noEyeCaptured() {
+        scene.eyeLabel?.alpha = 0
+    }
+
+    func eyeCaptured(image: UIImage, leftPupilOffset: CGPoint, rightPupilOffset: CGPoint) {
+        scene.eyeLabel?.alpha = 0.3
 
         like1Window[windowIndex] = Double(scene.like1Node!.position.x)
         like2Window[windowIndex] = Double(scene.like2Node!.position.x)
-        // leftEyeWindow[windowIndex] = 0 // Double(initRand.nextUniform())
-        // rightEyeWindow[windowIndex] = 0 // Double(initRand.nextUniform())
         leftEyeWindow[windowIndex] = Double(leftPupilOffset.x)
         rightEyeWindow[windowIndex] = Double(rightPupilOffset.x)
 

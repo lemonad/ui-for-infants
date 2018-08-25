@@ -108,10 +108,10 @@ using std::vector;
         [self prepare];
     }
 
+    // Uncomment for RGBA camera frames.
     // dlib::array2d<dlib::bgr_pixel> img;
     dlib::array2d<unsigned char> img;
 
-    // MARK: magic
     CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
     CVPixelBufferLockBaseAddress(imageBuffer, kCVPixelBufferLock_ReadOnly);
 
@@ -128,6 +128,8 @@ using std::vector;
         pixel = baseBuffer[position];  // (row * width + column) * 3;
         ++position;
     }
+
+    // Uncomment for RGBA camera frames.
 //    // copy samplebuffer image data into dlib image format
 //    img.reset();
 //    long position = 0;
@@ -173,14 +175,17 @@ using std::vector;
 
     // convert the face bounds list to dlib format
     std::vector<dlib::rectangle> convertedRectangles = [DlibWrapper convertCGRectValueArray:rects];
+    if (convertedRectangles.size() < 1) {
+        return @[];
+    }
 
     /* Find largest face */
     unsigned long largestAreaIndex = 0;
     long largestArea = 0;
 
     for (unsigned long j = 0; j < convertedRectangles.size(); ++j) {
-        dlib::rectangle oneFaceRect = convertedRectangles[j];
-        long area = oneFaceRect.width() * oneFaceRect.height();
+        dlib::rectangle fr = convertedRectangles[j];
+        long area = fr.width() * fr.height();
         if (area > largestArea) {
             largestAreaIndex = j;
             largestArea = area;
@@ -190,6 +195,7 @@ using std::vector;
     dlib::rectangle oneFaceRect = convertedRectangles[largestAreaIndex];
 
     // detect all landmarks
+    // TODO Check that detection actually found something (but this never seem to fail?)
     dlib::full_object_detection shape = sp(img, oneFaceRect);
 
     //        dlib::point p0 = shape.part(0);
@@ -257,15 +263,11 @@ using std::vector;
     cv::Mat eye_mask_eroded, eye_subregion_mask;
     cv::Point pupil = [PupilDetector cdfDetection:left_eye out1:eye_mask_eroded];
     [leftPupilKalman correct:pupil];
-    // cv::Point pupil = findCenterOfPupilCDFDetection(right_eye, eye_mask_eroded, eye_subregion_mask);
+    #if SAVE_EYE_MASKS_TO_FILE > 0
     [self saveImageU8:left_eye filename:@"left_eye.jpg"];
     // [self saveImageU8:eye_mask_eroded filename:@"right_eye_mask_eroded.jpg"];
     // [self saveImageU8:eye_subregion_mask filename:@"right_eye_subregion_mask.jpg"];
-
-    // printf("before (left): %f\n", left_pupil_offset.x);
-    // left_pupil_offset = CGPointMake(pupil.x - p0.x(), pupil.y - p0.y());
-    //printf("after (left): %f\n", left_pupil_offset.x);
-    // CGPoint right_pupil_offset = CGPointMake(pupil.x - p0.x(), pupil.y - p0.y());
+    #endif
 
     dlib::point pp(r2.left() + pupil.x, r2.top() + pupil.y);
 
@@ -274,15 +276,11 @@ using std::vector;
     cv::Mat right_eye = dlib::toMat(img_gray);
     pupil = [PupilDetector cdfDetection:right_eye out1:eye_mask_eroded];
     [rightPupilKalman correct:pupil];
-    // pupil = findCenterOfPupilCDFDetection(left_eye, eye_mask_eroded, eye_subregion_mask);
+    #if SAVE_EYE_MASKS_TO_FILE > 0
     [self saveImageU8:right_eye filename:@"right_eye.jpg"];
     // [self saveImageU8:eye_mask_eroded filename:@"left_eye_mask_eroded.jpg"];
     // [self saveImageU8:eye_subregion_mask filename:@"left_eye_subregion_mask.jpg"];
-
-    // right_pupil_offset = CGPointMake(pupil.x - p3.x(), pupil.y - p3.y());
-    // CGPoint left_pupil_offset = CGPointMake(pupil.x - p3.x(), pupil.y - p3.y());
-
-    // return @[[NSValue valueWithCGPoint: left_pupil_offset], [NSValue valueWithCGPoint: right_pupil_offset]];
+    #endif
 
     #if SHOW_CAMERA_AND_LANDMARKS > 0
     dlib::point pp2(r3.left() + pupil.x, r3.top() + pupil.y);
@@ -294,10 +292,6 @@ using std::vector;
     /* Pupils in box */
     draw_rectangle(img, r2, bw, 3);
     draw_rectangle(img, r3, bw, 3);
-//    draw_solid_circle(img, pp, radius, bw);
-//    draw_solid_circle(img, pp2, radius, bw);
-//    draw_solid_circle(img, pp, radius - 2, bwinv);
-//    draw_solid_circle(img, pp2, radius - 2, bwinv);
 
     /* Pupils in face*/
     draw_solid_circle(img, left_pupil_pt, radius, bw);
@@ -343,6 +337,7 @@ using std::vector;
         ++position;
     }
 
+    // Uncomment for RGBA camera frames.
 //    // copy dlib image data back into samplebuffer
 //    img.reset();
 //    position = 0;
