@@ -6,7 +6,7 @@ published: true
 
 ---
 For a parent, it is probably useful to know when the detection is working or
-not so I added a emoji-based indicator:
+not so I added an emoji-based indicator:
 
 <figure>
   <img src="{{ site.url }}{{ site.baseurl }}/assets/images/detection-indicator.jpg" alt="">

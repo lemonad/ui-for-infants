@@ -20,6 +20,13 @@ the [project specification](https://lemonad.github.io/ui-for-infants/assets/pdf/
   <figcaption>Sketch from project specification. Personal image by author. May 2018.</figcaption>
 </figure>
 
+Which then became a sketch in [Sketch.app](http://sketchapp.com/):
+
+<figure>
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/images/sketch-app.png" alt="">
+  <figcaption>Sketch. Personal image by author. June 2018.</figcaption>
+</figure>
+
 It's coded in Swift, using SpriteKit, so animations are a smooth 60 fps even
 though the face, eye, and pupil detection might run slower than that in the
 background. I'm currently also using Vision, Apple's computer vision framework,
