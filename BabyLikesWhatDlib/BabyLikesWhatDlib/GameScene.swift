@@ -122,11 +122,23 @@ class GameScene: SKScene {
         let move1 = SKAction.follow(upArrowPath.cgPath, asOffset: true, orientToPath: false, speed: speed * ratio) // 101
         percent1Node!.run(move1, completion: {
             print("up wins")
+            let transition = SKTransition.fade(withDuration: 1)
+            let winScene = WinScene(fileNamed: "WinScene")
+            winScene?.loved = 1
+            winScene?.viewController = self.viewController
+            winScene?.scaleMode = .aspectFill
+            self.view?.presentScene(winScene!, transition: transition)
         })
         percent1Node?.isPaused = true
         let move2 = SKAction.follow(downArrowPath.cgPath, asOffset: true, orientToPath: false, speed: speed) // 50
         percent2Node!.run(move2, completion: {
             print("down wins")
+            let transition = SKTransition.fade(withDuration: 1)
+            let winScene = WinScene(fileNamed: "WinScene")
+            winScene?.loved = 2
+            winScene?.viewController = self.viewController
+            winScene?.scaleMode = .aspectFill
+            self.view?.presentScene(winScene!, transition: transition)
             })
         percent2Node?.isPaused = true
 

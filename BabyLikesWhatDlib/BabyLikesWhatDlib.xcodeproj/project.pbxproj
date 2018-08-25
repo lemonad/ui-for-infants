@@ -27,6 +27,8 @@
 		AC0B3E20212EEFB600BB28BB /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = AC0B3E1F212EEFB600BB28BB /* GameScene.sks */; };
 		AC0B3E22212EF06000BB28BB /* Sniglet-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC0B3E21212EF06000BB28BB /* Sniglet-Regular.ttf */; };
 		AC6EBD53212EF887009A58FF /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6EBD52212EF887009A58FF /* Statistics.swift */; };
+		ACFCB6E72131B63A00B2692C /* WinScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = ACFCB6E62131B63A00B2692C /* WinScene.sks */; };
+		ACFCB6E92131BC8E00B2692C /* WinScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFCB6E82131BC8E00B2692C /* WinScene.swift */; };
 		E34847D2C476FEBEC8997E94 /* Pods_BabyLikesWhatDlib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A42CB8C40ABD0F609F8C5FA /* Pods_BabyLikesWhatDlib.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +66,8 @@
 		AC0B3E21212EF06000BB28BB /* Sniglet-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sniglet-Regular.ttf"; sourceTree = "<group>"; };
 		AC6EBD52212EF887009A58FF /* Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
 		ACD5878421304A25000CE757 /* Flags.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Flags.h; sourceTree = "<group>"; };
+		ACFCB6E62131B63A00B2692C /* WinScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = WinScene.sks; sourceTree = "<group>"; };
+		ACFCB6E82131BC8E00B2692C /* WinScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WinScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,10 +116,12 @@
 			children = (
 				AC0B3DDE212DFF6300BB28BB /* AppDelegate.swift */,
 				AC0B3E1F212EEFB600BB28BB /* GameScene.sks */,
+				ACFCB6E62131B63A00B2692C /* WinScene.sks */,
 				AC0B3E1A212E34B200BB28BB /* CameraHandler.swift */,
 				AC0B3DE2212DFF6300BB28BB /* Actions.sks */,
 				AC6EBD52212EF887009A58FF /* Statistics.swift */,
 				AC0B3DE4212DFF6300BB28BB /* GameScene.swift */,
+				ACFCB6E82131BC8E00B2692C /* WinScene.swift */,
 				AC0B3DE6212DFF6300BB28BB /* GameViewController.swift */,
 				AC0B3DE8212DFF6300BB28BB /* Main.storyboard */,
 				AC0B3E21212EF06000BB28BB /* Sniglet-Regular.ttf */,
@@ -233,6 +239,7 @@
 				AC0B3DEF212DFF6500BB28BB /* LaunchScreen.storyboard in Resources */,
 				AC0B3E22212EF06000BB28BB /* Sniglet-Regular.ttf in Resources */,
 				AC0B3DE3212DFF6300BB28BB /* Actions.sks in Resources */,
+				ACFCB6E72131B63A00B2692C /* WinScene.sks in Resources */,
 				AC0B3E03212E13FD00BB28BB /* shape_predictor_68_face_landmarks.dat in Resources */,
 				AC0B3E05212E13FD00BB28BB /* shape_predictor_5_face_landmarks.dat in Resources */,
 			);
@@ -270,6 +277,7 @@
 				AC0B3E0D212E156B00BB28BB /* DlibWrapper.mm in Sources */,
 				AC0B3E15212E1CED00BB28BB /* PupilDetector.mm in Sources */,
 				AC0B3DE7212DFF6300BB28BB /* GameViewController.swift in Sources */,
+				ACFCB6E92131BC8E00B2692C /* WinScene.swift in Sources */,
 				AC0B3E16212E1CED00BB28BB /* KalmanPoint.mm in Sources */,
 				AC0B3E0A212E153900BB28BB /* OpenCVWrapper.mm in Sources */,
 				AC0B3E1B212E34B200BB28BB /* CameraHandler.swift in Sources */,
