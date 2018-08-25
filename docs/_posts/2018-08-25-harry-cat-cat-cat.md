@@ -29,3 +29,11 @@ pick up his pupils properly. If the camera loses contact, I should...
     TODO Hide heart indicators when face or eye detection fails
 
 to avoid any confusion.
+
+Had he played long enough, one of the hearts (pretty sure which) would
+reach the tip of the arrow and the win screen would show, e.g.
+
+<figure>
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/images/win-screen.png" alt="">
+  <figcaption>End screen. Personal illustration by author. August 2018.</figcaption>
+</figure>
