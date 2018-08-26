@@ -99,7 +99,32 @@ using std::vector;
     NSString *documentsPath = [docPath objectAtIndex:0];
     documentsPath = [documentsPath stringByAppendingPathComponent:filename];
     const char *savePath = [documentsPath UTF8String];
-    save_jpeg(img2d, savePath);
+
+    NSString *ext = [filename pathExtension];
+    if ([ext isEqualToString:@"png"]) {
+        printf("Error: png not supported without additional compiler flag for dlib");
+        // save_png(img2d, savePath);
+    } else {
+        save_jpeg(img2d, savePath, 90);
+    }
+}
+
+- (void)saveImageBGR:(cv::Mat)img filename:(NSString *)filename {
+    dlib::array2d<dlib::bgr_pixel> img2d;
+    dlib::assign_image(img2d, dlib::cv_image<dlib::bgr_pixel>(img));
+
+    NSArray *docPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
+    NSString *documentsPath = [docPath objectAtIndex:0];
+    documentsPath = [documentsPath stringByAppendingPathComponent:filename];
+    const char *savePath = [documentsPath UTF8String];
+
+    NSString *ext = [filename pathExtension];
+    if ([ext isEqualToString:@"png"]) {
+        printf("Error: png not supported without additional compiler flag for dlib");
+        // save_png(img2d, savePath);
+    } else {
+        save_jpeg(img2d, savePath, 90);
+    }
 }
 
 - (NSArray<NSValue *> *) doWorkOnSampleBuffer:(CMSampleBufferRef)sampleBuffer
@@ -241,13 +266,15 @@ using std::vector;
     dlib::assign_image(img_gray, simg);
     cv::Mat left_eye = dlib::toMat(img_gray);
 
-    cv::Mat eye_mask_eroded, eye_subregion_mask;
-    cv::Point pupil = [PupilDetector cdfDetection:left_eye out1:eye_mask_eroded];
+    cv::Mat out1, out2, out3, out4;
+    cv::Point pupil = [PupilDetector cdfDetection:left_eye out1:out1 out2:out2 out3:out3 out4:out4];
     [leftPupilKalman correct:pupil];
     #if SAVE_EYE_MASKS_TO_FILE > 0
-    [self saveImageU8:left_eye filename:@"left_eye.jpg"];
-    // [self saveImageU8:eye_mask_eroded filename:@"right_eye_mask_eroded.jpg"];
-    // [self saveImageU8:eye_subregion_mask filename:@"right_eye_subregion_mask.jpg"];
+    [self saveImageU8:left_eye filename:@"in1.jpg"];
+    [self saveImageU8:out1 filename:@"out1.jpg"];
+    [self saveImageU8:out2 filename:@"out2.jpg"];
+    [self saveImageU8:out3 filename:@"out3.jpg"];
+    [self saveImageBGR:out4 filename:@"out4.jpg"];
     #endif
 
     dlib::point pp(r2.left() + pupil.x, r2.top() + pupil.y);
@@ -255,10 +282,10 @@ using std::vector;
     simg = dlib::sub_image(face_chip, r3);
     dlib::assign_image(img_gray, simg);
     cv::Mat right_eye = dlib::toMat(img_gray);
-    pupil = [PupilDetector cdfDetection:right_eye out1:eye_mask_eroded];
+    pupil = [PupilDetector cdfDetection:right_eye out1:out1 out2:out2 out3:out3 out4:out4];
     [rightPupilKalman correct:pupil];
     #if SAVE_EYE_MASKS_TO_FILE > 0
-    [self saveImageU8:right_eye filename:@"right_eye.jpg"];
+    // [self saveImageU8:right_eye filename:@"right_eye.jpg"];
     // [self saveImageU8:eye_mask_eroded filename:@"left_eye_mask_eroded.jpg"];
     // [self saveImageU8:eye_subregion_mask filename:@"left_eye_subregion_mask.jpg"];
     #endif

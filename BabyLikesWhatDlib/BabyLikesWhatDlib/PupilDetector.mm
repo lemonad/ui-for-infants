@@ -11,8 +11,8 @@
 
 @implementation PupilDetector
 
-+ (cv::Point) cdfDetection:(cv::Mat)eye_image out1:(cv::Mat &)out1 {
-    cv::Mat hist, out2;
++ (cv::Point) cdfDetection:(cv::Mat)eye_image out1:(cv::Mat &)out1 out2:(cv::Mat &)out2 out3:(cv::Mat &)out3 out4:(cv::Mat &)out4 {
+    cv::Mat hist;
 
     const int kernel_size = 2;
     const int small_window = 15;
@@ -97,11 +97,14 @@
     cog_y = minloc_y1 + cog_y;
     // std::cout << "Center of Gravity: " << cog_x << ", " << cog_y << std::endl;
 
-    //    cvtColor(eye_subregion_mask, out1, CV_GRAY2BGR);
-    //    cv::circle(out1, cv::Point(cog_x, cog_y), 5, cv::Scalar(255, 0, 0));
-    // cv::rectangle(out1, large_subregion, cv::Scalar(255, 0, 0));
-
-    //    out2 = eye_subregion_mask;
+#if 0
+    eye_mask_eroded.copyTo(out1);
+    eye_subregion.copyTo(out2);
+    eye_subregion_mask.copyTo(out3);
+    cvtColor(eye_subregion, out4, CV_GRAY2BGR);
+    cv::circle(out4, cv::Point(cog_x, cog_y), 5, cv::Scalar(255, 0, 0));
+    cv::rectangle(out4, large_subregion, cv::Scalar(255, 0, 0));
+#endif
 
     return cv::Point(cog_x, cog_y);
 }
